@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="目录 前言 1.分析与架构设计  1.1 需求分析    1.2 逻辑概念模型设计     1.2.1 总体架构设计       1.2.2 语言库系统设计       1.2.3 对话系统设计     2. 极限思想实现对话核心功能  2.1 物理模型设计    2.2 JAVA代码实现方法   3. 后记    前言 高中时我就曾有过要写一个智能聊天的程序，但当时能力有限，也只是一个想法而已.">
+  <meta name="description" content="目录 前言 1.分析与架构设计  1.1 需求分析    1.2 逻辑概念模型设计     1.2.1 总体架构设计       1.2.2 语言库系统设计       1.2.3 对话系统设计     2. 极限思想实现对话核心功能  2.1 物理模型设计    2.2 JAVA代码实现方法   3. 后记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI聊天程序之极限思想的应用v1.0">
 <meta property="og:url" content="http://uiuing.top/2020/12/24/AIChat_v1_0/index.html">
 <meta property="og:site_name" content="Uiu&#39;s blog">
-<meta property="og:description" content="目录 前言 1.分析与架构设计  1.1 需求分析    1.2 逻辑概念模型设计     1.2.1 总体架构设计       1.2.2 语言库系统设计       1.2.3 对话系统设计     2. 极限思想实现对话核心功能  2.1 物理模型设计    2.2 JAVA代码实现方法   3. 后记    前言 高中时我就曾有过要写一个智能聊天的程序，但当时能力有限，也只是一个想法而已.">
+<meta property="og:description" content="目录 前言 1.分析与架构设计  1.1 需求分析    1.2 逻辑概念模型设计     1.2.1 总体架构设计       1.2.2 语言库系统设计       1.2.3 对话系统设计     2. 极限思想实现对话核心功能  2.1 物理模型设计    2.2 JAVA代码实现方法   3. 后记">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://81.71.19.170/imgs/2020_12_24/2_12_24_1.png">
 <meta property="og:image" content="http://81.71.19.170/imgs/2020_12_24/2_12_24_2.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://81.71.19.170/imgs/2020_12_24/2_12_24_13.png">
 <meta property="og:image" content="http://81.71.19.170/imgs/2020_12_24/2_12_24_14.png">
 <meta property="article:published_time" content="2020-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-24T08:01:02.560Z">
+<meta property="article:modified_time" content="2020-12-24T08:36:09.071Z">
 <meta property="article:author" content="Uiuing">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -89,11 +89,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/" target="_blank">主页</a></li>
+				<li><a href="/" target="_blank">Home</a></li>
 			
-				<li><a href="/categories/Notes" target="_blank">技术笔记</a></li>
+				<li><a href="/categories/Notes" target="_blank">Notes</a></li>
 			
-				<li><a href="/categories/Whimsical" target="_blank">开源项目</a></li>
+				<li><a href="/categories/Whimsical" target="_blank">Whimsical</a></li>
 			
 			</ul>
 		</nav>
@@ -116,6 +116,11 @@
 					
 						<a class="github" href="https://github.com/Uiuing" 
 												title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					
+				
+					
+						<a class="csdn" href="https://blog.csdn.net/qq_41103843?spm=1001.2101.3001.5343" 
+												title="CSDN" target="_blank"><i class="icon-csdn"></i></a>
 					
 				
 					
@@ -183,6 +188,11 @@
 						
 					
 						
+						<a class="csdn" target="_blank" 
+							href="https://blog.csdn.net/qq_41103843?spm=1001.2101.3001.5343" title="CSDN"><i class="icon-csdn"></i></a>
+						
+					
+						
 						<a class="mail" target="_blank" 
 							href="mailto:cooluiu@qq.com" title="Email"><i class="icon-mail"></i></a>
 						
@@ -194,11 +204,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">Home</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/Notes">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/Notes">Notes</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/Whimsical">开源项目</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/Whimsical">Whimsical</a></li>
 		        
 				</ul>
 			</nav>
@@ -263,7 +273,7 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>前言</li>
+<li><strong>前言</strong></li>
 <li><strong>1.分析与架构设计</strong></li>
 <li><ul>
 <li>1.1 需求分析</li>
@@ -303,16 +313,15 @@
 <li>2.2 JAVA代码实现方法</li>
 </ul>
 </li>
-<li><strong>3. 后记</strong><p></p>
-
-</li>
+<li><strong>3. 后记</strong></li>
 </ul>
+<a id="more"></a>
+<p><br></br></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 高中时我就曾有过要写一个智能聊天的程序，但当时能力有限，也只是一个想法而已.</p>
 <p>刚步入大学时学习了”图灵测试“相关知识，刚好我也在学习编程，便又产生了兴趣，但被困于实现方法，当初并未实现，当时我能想到且能实现但方法有两种：</p>
 <p>1.编写关键词数据库，用户输入之后与关键词匹配，然后重组再输出。我认为不够智能，便作罢了.</p>
 <p>2.根据汉字的语法结构来分析处理，但其工程量太庞大，也作罢了.</p>
 <p>但在几次数学课的学习以后，被我找到了问题的解决方法，于是便有了这篇文章.</p>
-<a id="more"></a>
 <p><br></br></p>
 <h2 id="1-分析与架构设计"><a href="#1-分析与架构设计" class="headerlink" title="1.分析与架构设计"></a>1.分析与架构设计</h2><p><br></br></p>
 <h3 id="1-1-需求分析"><a href="#1-1-需求分析" class="headerlink" title="1.1 需求分析"></a>1.1 需求分析</h3><p><strong>用户角度分析：</strong></p>
@@ -376,8 +385,9 @@
 <h2 id="3-后记"><a href="#3-后记" class="headerlink" title="3. 后记"></a>3. 后记</h2><p>1.在终端中运行该程序：<br><img src="http://81.71.19.170/imgs/2020_12_24/2_12_24_12.png"><br>2.程序功能展示：<br><img src="http://81.71.19.170/imgs/2020_12_24/2_12_24_13.png"><br><br></br><br><strong>拓展思考：</strong><br><strong>既然是使用极限思想探究出的算法，那么是否可以将该算法使用其他语言实现？<br>又可怎么应用？</strong><br>答：<br>可以，基于HTML/CSS/Javascript可以在网页上实现该功能；<br>使用Python实现更为惊艳，使用基于itchat的Python库：wxpy，可实现类似“微软小冰”的智能聊天程序，尽管不可能达到“微软小冰”的智能程度，但也能当个玩具。<br>将此程序使用Python重新开发，安置于服务器上，对外提供访问接口，任何开发者只需要调用接口便能使用，开发者向Api Post数据由服务器处理并Get回馈。<br>设计框架如下：</p>
 <p><img src="http://81.71.19.170/imgs/2020_12_24/2_12_24_14.png"></p>
 <hr>
+<p>感谢～</p>
 <blockquote>
-<p><strong>语言数据库完善开发以后会托管到GitHub上开源，同所有感兴趣的开发者们共同开发!<br>GitHub:   <a target="_blank" rel="noopener" href="https://github.com/uiuing">github.com/uiuing</a><br>Blog：<a href="http://uiuing.top/">uiuing.top</a></strong></p>
+<p><strong>语言数据库完善开发以后会托管到GitHub上开源，同所有感兴趣的开发者们共同开发!<br>GitHub:   <a target="_blank" rel="noopener" href="https://github.com/uiuing">github.com/uiuing</a><br>Blog：<a href="http://uiuing.top/">uiuing.top</a><br>CSDN: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41103843">https://blog.csdn.net/qq_41103843</a></strong></p>
 </blockquote>
 
     
